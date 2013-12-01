@@ -17,6 +17,7 @@
 package org.gmote.server;
 
 import java.awt.AWTException;
+import java.awt.GraphicsConfiguration;
 import java.awt.GraphicsDevice;
 import java.awt.GraphicsEnvironment;
 import java.awt.MouseInfo;
@@ -95,7 +96,12 @@ public class TrackpadHandler {
       newY = clampToScreen(newY, currentScreen.y, currentScreen.height);
     }
     
-    robot.mouseMove(newX, newY);
+    // Robot takes coordinates relative to the primary screen
+    GraphicsEnvironment localGfxEnvironment = GraphicsEnvironment.getLocalGraphicsEnvironment();
+    GraphicsDevice defaultScreen = localGfxEnvironment.getDefaultScreenDevice();
+    Rectangle defaultScreenBounds = defaultScreen.getDefaultConfiguration().getBounds();
+ 
+    robot.mouseMove(newX - defaultScreenBounds.x, newY - defaultScreenBounds.y);
     mouseX = newX;
     mouseY = newY;
     

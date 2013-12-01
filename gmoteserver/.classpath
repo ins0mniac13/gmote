@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
 	<classpathentry excluding="org/gmote/server/GmoteServerUiLinux.java|org/gmote/server/GmoteServerUiMac.java|org/gmote/server/ServerUtilMac.java|org/gmote/server/media/appledvd/|org/gmote/server/media/itunes/|org/gmote/server/media/preview/" kind="src" path="src"/>
-	<classpathentry kind="src" path="res"/>
 	<classpathentry kind="src" path="srcupdater"/>
 	<classpathentry kind="src" path="3rd_party"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
